@@ -1193,7 +1193,7 @@ def _run_gateway(
         async with server:
             await server.serve_forever()
     # Register Dream system job (always-on, idempotent on restart)
-    from nanobot.cron.types import CronJob, CronPayload
+    from nanobot.cron.types import CronJob, CronPayload, CronSchedule
     dream_cfg = config.agents.defaults.dream
     cron.register_system_job(CronJob(
         id="dream",
